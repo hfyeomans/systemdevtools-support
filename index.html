@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SystemDevtools — Support</title><link rel="stylesheet" href="style.css"></head>
+<body><main>
+<nav><a href="./">Support</a><a href="privacy.html">Privacy Policy</a></nav>
+<h1>SystemDevtools</h1>
+<p class="sub">Support for the iPad and iPhone app</p>
+
+<div class="card">
+<p>SystemDevtools shows live system stats from your Linux servers over SSH. Nothing needs to be installed on the server.</p>
+</div>
+
+<h2>What a server needs</h2>
+<div class="card">
+<p>An SSH server with public-key or password login, a user account, a standard <code>sh</code>, and readable <code>/proc</code> and <code>/sys</code>, which is the default. For GPU stats, the NVIDIA driver's <code>nvidia-smi</code>.</p>
+</div>
+
+<h2>Adding a server</h2>
+<div class="card">
+<p>Tap +, enter the address and username, and choose a key. The app can create a key in your device's Secure Enclave. Copy its public key line into <code>~/.ssh/authorized_keys</code> on the server. You can also import an Ed25519 or ECDSA key, or use a password. RSA keys aren't supported, so add an Ed25519 key if your server accepts only RSA.</p>
+</div>
+
+<h2>Troubleshooting</h2>
+<div class="card">
+<ul>
+<li><strong>Host key changed:</strong> the app pins each server's host key on first connect and refuses a different one. If you rebuilt the server on purpose, delete its record and add it again.</li>
+<li><strong>Values show as unavailable:</strong> some values, such as CPU package power and other users' disk I/O, are readable only by root on Linux. The app shows them as unavailable instead of zero.</li>
+<li><strong>Process actions:</strong> terminate, kill, signals, and renice work on processes your SSH user owns, or on any process when sudo is set up.</li>
+</ul>
+</div>
+
+<h2>Contact</h2>
+<div class="card">
+<p>Email <a href="mailto:hank.yeomans@me.com">hank.yeomans@me.com</a>. Please include your device, iOS version, and your server's Linux distribution.</p>
+</div>
+
+<footer>© 2026 Hank Yeomans</footer>
+</main></body></html>
