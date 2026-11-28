@@ -25,7 +25,7 @@
 <ul>
 <li><strong>Host key changed:</strong> the app pins each server's host key on first connect and refuses a different one. If you rebuilt the server on purpose, delete its record and add it again.</li>
 <li><strong>Values show as unavailable:</strong> some values, such as CPU package power and other users' disk I/O, are readable only by root on Linux. The app shows them as unavailable instead of zero.</li>
-<li><strong>Process actions:</strong> terminate, kill, signals, and renice work on processes your SSH user owns, or on any process when sudo is set up.</li>
+<li><strong>Process actions:</strong> terminate, kill, signals, and renice work on processes your SSH user owns. Linux refuses actions on other users' processes. Without root, Linux also lets you only raise a process's nice value (lower its priority), not lower it.</li>
 </ul>
 </div>
 
